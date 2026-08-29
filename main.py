@@ -7,7 +7,8 @@ import sys
 import os
 from pathlib import Path
 
-# komentarz
+
+
 class BatteryMonitor:
     BATTERY_THRESHOLD = 20  # Percentage
     CHECK_INTERVAL = 300    # 5 minutes
