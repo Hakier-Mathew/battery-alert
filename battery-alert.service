@@ -1,0 +1,18 @@
+[Unit]
+Description=Low Battery Notification Daemon
+After=graphical-session-pre.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/projects/battery-alert/main.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Ensure DBUS is available for notifications
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+
+[Install]
+WantedBy=graphical-session.target
